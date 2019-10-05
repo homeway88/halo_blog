@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  blog_mysql_server:
+    container_name: blog_mysql_server
+    image: 'mysql:5.7'
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - './mysql/conf:/etc/mysql/conf.d'
+      - './mysql/data:/var/lib/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: whwdym.top
+      MYSQL_DATABASE: blog
+  halo_blog_server:
+    container_name: halo_blog_server
+    image: 'ruibaby/halo:1.1.1'
+    restart: always
+    depends_on:
+      - blog_mysql_server
+    ports:
+      - '8090:8090'
+    volumes:
+      - './halo/data:/root/.halo'
