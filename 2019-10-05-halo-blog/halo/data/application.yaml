@@ -1,0 +1,9 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    # MySQL 配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://blog_mysql_server:3306/blog?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: whwdym.top
