@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  cookiemanager:
+    container_name: cookiemanager
+    image: 'cookiemanager:1.0.0'
+    restart: always
+    ports:
+      - '8888:8888'

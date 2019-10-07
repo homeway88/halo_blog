@@ -1,0 +1,1 @@
+docker build . -t cookiemanager:1.0.0
